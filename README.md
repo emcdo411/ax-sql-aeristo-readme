@@ -3,6 +3,14 @@
 **Role:** Associate Solutions Architect
 **Audience:** Alan (Stakeholder), Alex (President, Aeristo)
 
+## 🛠️ Tech Stack
+
+![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoftsqlserver\&logoColor=white)
+![Dynamics AX](https://img.shields.io/badge/Microsoft%20Dynamics%20AX-0078D4?logo=microsoft\&logoColor=white)
+![SSMS](https://img.shields.io/badge/SQL%20Server%20Management%20Studio-343434?logo=microsoft\&logoColor=white)
+![Mermaid](https://img.shields.io/badge/Mermaid%20JS-00B4CC?logo=mermaid\&logoColor=white)
+![Markdown](https://img.shields.io/badge/Markdown-000000?logo=markdown\&logoColor=white)
+
 This document outlines how Microsoft Dynamics AX (based on AX 2012 and earlier) stores and organizes backend SQL data. It’s designed to inform both technical and non-technical stakeholders at Aeristo.
 
 ---
@@ -81,9 +89,30 @@ From the AX front-end (like the "Accounts receivable" area shown in the screensh
 
 ## 📈 Visual Schema Map
 
-Below is a simplified schema diagram showing how common Dynamics AX modules (General Ledger, Accounts Receivable, Sales, Inventory) relate to key SQL tables:
+Below is a simplified schema diagram rewritten as a **Mermaid-compatible workflow**, showing how Dynamics AX modules relate to key SQL tables:
 
-![AX Visual Schema Map](sandbox:/mnt/data/A_README_document_image_details_Microsoft_Dynamics.png)
+```mermaid
+flowchart TD
+  GL[General Ledger]
+  AR[Accounts Receivable]
+  SL[Sales]
+  INV[Inventory]
+
+  Cust[CustTable]
+  Vend[VendTable]
+  SalesH[SalesTable]
+  SalesL[SalesLine]
+  Ledger[LedgerTrans]
+
+  GL --> Ledger
+  AR --> Cust
+  AR --> Vend
+  SL --> SalesH
+  SL --> SalesL
+  INV --> SalesL
+```
+
+This diagram helps both technical and non-technical users understand that while modules appear separate in the front-end, their data feeds into centralized SQL tables tied by business functions.
 
 ---
 
