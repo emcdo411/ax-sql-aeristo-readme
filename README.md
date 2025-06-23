@@ -173,9 +173,10 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    OutputD365 --> Auth[Azure AD + OAuth2 (App Registration)]
-    Auth --> OData[OData v4 API Endpoint]
-    OData --> D365[Business Central Tables]
+    OutputD365 --> Auth["Azure AD + OAuth2 
+ (App Registration)"]
+    Auth --> OData["OData v4 API Endpoint"]
+    OData --> D365["Business Central Tables"]
 ```
 
 ---
