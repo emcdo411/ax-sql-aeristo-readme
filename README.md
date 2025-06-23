@@ -1,7 +1,8 @@
 # 📘 Microsoft Dynamics AX SQL Backend Overview
 
 **Role:** Associate Solutions Architect
-**Audience:** Alan Mayagoitia - Strategic Partnerships, Aeristo, Alex Schmidt - President, Aeristo
+
+**Audience:** Alan Mayagoitia - Strategic Partnerships, Aeristo | Alex Schmidt - President, Aeristo
 
 ## 🛠️ Tech Stack
 
